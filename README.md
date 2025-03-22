@@ -24,38 +24,9 @@ This is a React component that displays a product card with details such as bran
    npm start
    ```
 
-## Usage
+## Running Tests
 
-```tsx
-import React from 'react';
-import ProductCard from './ProductCard';
+To run the tests in this project, you can use the following command:
 
-const product = {
-  brand: "Nike",
-  href: "#",
-  title: "Air Max 2021",
-  newPrice: "$120.00",
-  usedPrice: "$80.00",
-  image: "https://example.com/product-image.jpg"
-};
-
-const App = () => {
-  return (
-    <div>
-      <ProductCard product={product} />
-    </div>
-  );
-};
-
-export default App;
-```
-
-## Props
-
-- `product` (object): The product data to display in the card.
-  - `brand` (string): The brand name of the product.
-  - `href` (string): Link to the product page.
-  - `title` (string): The product title.
-  - `newPrice` (string): The price of the new product.
-  - `usedPrice` (string): The price of the used product.
-  - `image` (string): The URL of the product image.
+```bash
+npm test
