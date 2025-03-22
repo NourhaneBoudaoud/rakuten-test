@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+# Product Card Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React component that displays a product card with details such as brand, title, new price, used price, and an image. The component includes a responsive design and ensures that data is correctly rendered only when available.
 
-## Available Scripts
+## Features
+- **Responsive Design**: The card adjusts its layout based on screen size (mobile, tablet, and desktop).
+- **Conditional Rendering**: Ensures that the product details only render when all necessary data (brand, title, price, and image) is available.
+- **Skeleton Loading**: Displays loading skeletons for each piece of data while it’s being fetched or is missing.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/NourhaneBoudaoud/rakuten-test.git
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+3. Run the app:
+   ```bash
+   npm start
+   ```
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```tsx
+import React from 'react';
+import ProductCard from './ProductCard';
 
-### `npm run build`
+const product = {
+  brand: "Nike",
+  href: "#",
+  title: "Air Max 2021",
+  newPrice: "$120.00",
+  usedPrice: "$80.00",
+  image: "https://example.com/product-image.jpg"
+};
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+const App = () => {
+  return (
+    <div>
+      <ProductCard product={product} />
+    </div>
+  );
+};
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+export default App;
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Props
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `product` (object): The product data to display in the card.
+  - `brand` (string): The brand name of the product.
+  - `href` (string): Link to the product page.
+  - `title` (string): The product title.
+  - `newPrice` (string): The price of the new product.
+  - `usedPrice` (string): The price of the used product.
+  - `image` (string): The URL of the product image.
